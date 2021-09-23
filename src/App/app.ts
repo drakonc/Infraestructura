@@ -51,10 +51,10 @@ export class Aplicacion {
         this.app.use(cors());
         this.app.use(flash());
         this.app.use(morgan('dev'));
+        this.app.use(express.urlencoded({ extended: false }));
         this.app.use(express.json());
         this.app.use(passport.initialize());
         this.app.use(passport.session());
-        this.app.use(express.urlencoded({ extended: false }));
         this.app.use(session({secret: 'nodemysqlsession',resave: true,saveUninitialized: false}))
     }
 

@@ -10,6 +10,9 @@ class DomainRoute {
 
     private Config(): void {
         this.router.get("/viewDomains", domainControllers.getViewDomain);
+        this.router.get("/viewAddDomain",domainControllers.viewAddDomain);
+        this.router.post("/postAddDomain", domainControllers.postAddDomain);
+        this.router.get("/viewEditDomain/:id/:codigo", domainControllers.viewEditDomain);
     }
 }
 

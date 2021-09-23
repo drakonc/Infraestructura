@@ -1,0 +1,34 @@
+<div class="d-sm-flex align-items-center justify-content-between mb-4">
+    <h1 class="h3 mb-0 text-gray-800">Usuarios de Dominios</h1>
+    <a href="/viewDomains" class="d-none d-sm-inline-block btn btn-sm btn-primary shadow-sm"><i class="fas fa-house-user"></i> Listar Usuarios de Dominios</a>
+</div>
+
+<div class="row">
+    <div class="col-lg-6 offset-lg-3">
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Editar Usuario de Dominio</h6>
+            </div>
+            <div class="card-body">
+                <form action="/postEditDomain" method="POST">
+                    <div class="form-group">
+                        <label for="txtNombre">NOMBRE</label>
+                        <input type="text" class="form-control" id="txtNombre" name="Nombre" value="{{data.NOMBRE}}" aria-describedby="nombreHelp" >
+                        <small id="nombreHelp" class="form-text text-muted">Favor Ingrese el Nombre</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="txtUsuario">USUARIO</label>
+                        <input type="text" class="form-control" id="txtUsuario" name="Usuario" value="{{data.USUARIO}}" aria-describedby="usuarioHelp">
+                        <small id="usuarioHelp" class="form-text text-muted">Favor Ingrese el Usuario</small>
+                    </div>
+                    <div class="form-group">
+                        <label for="txtContrasena">CONTRASEÑA</label>
+                        <input type="text" class="form-control" id="txtContrasena" name="Contrasena" value="{{data.CONTRASENA}}" aria-describedby="contrasenaHelp">
+                        <small id="contrasenaHelp" class="form-text text-muted">Favor Ingrese La Contraseña</small>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Guardar</button>
+                    </form>
+            </div>
+        </div>
+    </div>
+</div>

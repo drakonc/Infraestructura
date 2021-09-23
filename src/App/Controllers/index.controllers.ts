@@ -5,6 +5,7 @@ class IndexController {
 
     public async Index (req: Request, res: Response) {
         const url = req.url;
+        req.flash('success','Bienvenido');
         res.render("Home/index", { url });
     }
 
