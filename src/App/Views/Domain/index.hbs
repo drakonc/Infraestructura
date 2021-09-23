@@ -1,0 +1,53 @@
+<h1 class="h3 mb-4 text-gray-800">Usuarios de Dominios</h1>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h6 class="m-0 font-weight-bold text-primary">Listado de Usuarios de Dominio</h6>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                        <thead>
+                            <tr>
+                                <th width="10%">CODIGO</th>
+                                <th width="35%">NOMBRE</th>
+                                <th width="20%">USUARIO</th>
+                                <th width="20%">CONTRASEÑA</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tfoot>
+                            <tr>
+                                <th width="10%">CODIGO</th>
+                                <th width="35%">NOMBRE</th>
+                                <th width="20%">USUARIO</th>
+                                <th width="20%">CONTRASEÑA</th>
+                                <th></th>
+                            </tr>
+                        </tfoot>
+                        <tbody>
+                            {{#each data}}
+                                <tr>
+                                    <td>{{CODIGO}}</td>
+                                    <td>{{NOMBRE}}</td>
+                                    <td>{{USUARIO}}</td>
+                                    <td>{{CONTRASENA}}</td>
+                                    <td></td>
+                                </tr>
+                            {{else}}
+                                <div class="col-md-a mx-auto">
+                                    <div class="card card-body text-center">
+                                        <p>No hay Usuarios de Dominios Guardados Todavia Crea uno</p>
+                                        <a href="/links/add">Crea Tu Link Favorito</a>
+                                    </div>
+                                </div>
+                            {{/each}}
+                        </tbody>   
+                    </table>
+                </div>                
+            </div>
+       </div>
+    </div>
+</div>

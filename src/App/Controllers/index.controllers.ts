@@ -4,7 +4,8 @@ import { DBConection } from '../DataBase';
 class IndexController {
 
     public async Index (req: Request, res: Response) {
-        res.render("Home/index");
+        const url = req.url;
+        res.render("Home/index", { url });
     }
 
     public async getConection (req: Request, res: Response) {

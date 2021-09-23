@@ -7,6 +7,7 @@ import session from 'express-session';
 import morgan from 'morgan';
 import cors from 'cors';
 import path from 'path';
+import { isEqualHelperHandlerbar } from './Lib/handlebars';
 
 
 //Importar Rutas
@@ -36,7 +37,10 @@ export class Aplicacion {
             defaultLayout: "main",
             layoutsDir: path.join(this.app.get("views"), "Layouts"),
             partialsDir: path.join(this.app.get("views"), "Partials"),
-            extname: ".hbs"
+            extname: ".hbs",
+            helpers: {
+                is_equal: isEqualHelperHandlerbar
+            }
           })
         );
         this.app.set("view engine", ".hbs");

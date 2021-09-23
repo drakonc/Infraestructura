@@ -3,15 +3,14 @@ import { DBConection, querys, sql } from '../DataBase';
 
 class DomainController {
 
-    public async getDomains(req: Request, res: Response): Promise<any> {
+    public async getViewDomain(req: Request, res: Response){
         try {
             const db = new DBConection();
             const pool = await db.getConnection();
             const result = await pool?.request().execute(querys.ListarDominios);
             const data = result?.recordset;
-            const rowsAffected = result?.rowsAffected[0];
-            pool?.close();
-            res.status(200).json({ status: 200, rowsAffected, data });
+            const url = req.url;
+            res.render("Domain/index", {data, url});
         } catch (error) {
             res.status(500);
             res.json({status: 500, mensaje: error});

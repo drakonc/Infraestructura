@@ -9,9 +9,7 @@ class DomainRoute {
     }
 
     private Config(): void {
-        this.router.get("/getDomains", domainControllers.getDomains);
-        this.router.get("/getDomain/:id/:codigo", domainControllers.getOneDominio);
-        this.router.post("/createDomain", domainControllers.createDominio);
+        this.router.get("/viewDomains", domainControllers.getViewDomain);
     }
 }
 
